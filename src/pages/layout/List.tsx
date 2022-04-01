@@ -11,12 +11,16 @@ const List = (props: ProductManagerRemove) => {
     return (
         <div>
             <Nav/>
+           
             <h2 className='mx-auto text-yellow-500 text-4xl'> Danh Sách Sản Phẩm   </h2>
             <div className="flex flex-col">
                 <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                         <div className="overflow-hidden">
+                        <button className='pl-3'><a href="/add">Thêm mới</a></button>
+
                             <table className="min-w-full text-center table table-bordered">
+                                
                                 <thead className="border-b">
                                     <tr>
                                         <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 border">
