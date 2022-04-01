@@ -1,26 +1,24 @@
 import React from 'react';
-
+import "toastr/build/toastr.min.css";
+import toastr from "toastr";
+import { authenticated } from '../../utils/localStaroge';
 import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from "react-hook-form";
+import { signin } from '../../api/user';
 type Input = {
     name:string,
     email: string,
     password: string
 };
-type ProductSignupProps = {
-    name:string,
-    email: string,
-    onAdd: (user: Input) => void
-  
-  }
-
-const Signin = (props: ProductSignupProps) => {
+const Signin = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<Input>();
     const navigate = useNavigate();
-    const onSubmit: SubmitHandler<Input> = (dataInput) => {
-      console.log(dataInput)
-      props.onAdd(dataInput)
-      navigate('/')
+    const onSubmit: SubmitHandler<Input> = async data => {
+        const {data:user} = await signin(data)
+        authenticated(user,()=>{
+            toastr.success("Bạn đã đăng nhập thành công,chờ 3s để chuyển trang");
+            navigate('/')
+        })
     }
     return (
         <div>

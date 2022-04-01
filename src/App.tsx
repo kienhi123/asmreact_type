@@ -53,12 +53,11 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<Websitelayout />} />
-        <Route path='/signup' element={<Signup onAdd={onHandleSignup} />} />
+        <Route path='/signup' element={<Signup name='kien' onAdd={onHandleSignup} />} />
         <Route path='/admin' element={<Adminlayout />} />
         <Route path='/add' element={<Add name='kien' onAdd={onhandlerAdd}/>} />
         <Route path='/list' element={<List products={products} onRemove={onHandleremove}/>} />
         <Route path='/products/:id/edit' element={<Edit onUpdate={onhanderUpdate}/>} />
-
         <Route path='/card' element={<Card/>} />
         <Route path='/signin' element={<Signin/>} />
 
