@@ -10,6 +10,7 @@ import List from './pages/layout/List';
 import { ProductType } from './type/Products';
 import { add, list, remove, update } from './api/product';
 import Edit from './pages/layout/Edit';
+import Card from './commpents/Card';
 function App() {
   const [products, setProducts] = useState<ProductType[]>([]);
   useEffect(() => {
@@ -48,6 +49,8 @@ function App() {
         <Route path='/add' element={<Add name='kien' onAdd={onhandlerAdd}/>} />
         <Route path='/list' element={<List products={products} onRemove={onHandleremove}/>} />
         <Route path='/products/:id/edit' element={<Edit onUpdate={onhanderUpdate}/>} />
+
+        <Route path='/card' element={<Card/>} />
 
       </Routes>
 

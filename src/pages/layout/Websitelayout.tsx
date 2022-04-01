@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from '../../commpents/Card'
 import Sile from '../../commpents/Sile'
 
 type Props = {}
@@ -55,7 +56,7 @@ const Websitelayout = (props: Props) => {
         </div>
 
         <div className="max-w-lg md:mx-12 md:order-2">
-          <h1 className="text-3xl font-medium tracking-wide text-gray-800 dark:text-white md:text-4xl">The best Apple Watch apps</h1>
+          <h1 className="text-3xl font-medium tracking-wide text-gray-800 dark:text-white md:text-4xl">Honda is always for you</h1>
           <p className="mt-4 text-gray-600 dark:text-gray-300">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae laudantium quod rem voluptatem eos accusantium cumque.</p>
           <div className="mt-6">
             <a href="#" className="block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-blue-500 rounded-md md:inline hover:bg-blue-400">Download from App Store</a>
@@ -64,12 +65,12 @@ const Websitelayout = (props: Props) => {
       </div>
 
       <div className="flex items-center justify-center w-full h-96 md:w-1/2">
-        <img className="object-cover w-full h-full max-w-2xl rounded-md" src="https://photo-cms-kienthuc.zadn.vn/zoom/800/Uploaded/nguyenanhtuan/2015_03_09/kawasaki-ninja-h2r_VUIC.jpg" alt="apple watch photo" />
+        <img className="object-cover w-full h-full max-w-2xl rounded-md  group-hover:text-white" src="https://www.tinoto.net/wp-content/uploads/2021/07/honda-cb300r-tinoto.net-700x525.jpg" alt="apple watch photo" />
       </div>
     </div> 
     <Sile/>
   </header>
-
+   <Card/>
 
 </div>
   )

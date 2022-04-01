@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Nav from '../../commpents/Nav';
 import { ProductType } from '../../type/Products';
 type ProductManagerRemove = {
     products: ProductType[];
@@ -9,7 +10,8 @@ type ProductManagerRemove = {
 const List = (props: ProductManagerRemove) => {
     return (
         <div>
-            <a href="/add">Thêm mới</a>
+            <Nav/>
+            <h2 className='mx-auto text-yellow-500 text-4xl'> Danh Sách Sản Phẩm   </h2>
             <div className="flex flex-col">
                 <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
