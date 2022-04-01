@@ -4,7 +4,7 @@ import Sile from '../../commpents/Sile'
 type Props = {}
 
 const Websitelayout = (props: Props) => {
-  return (
+  return ( <div>
     <header className="bg-white dark:bg-gray-800">
     <nav className="bg-white dark:bg-gray-800">
       <div className="container mx-auto  " />
@@ -66,10 +66,12 @@ const Websitelayout = (props: Props) => {
       <div className="flex items-center justify-center w-full h-96 md:w-1/2">
         <img className="object-cover w-full h-full max-w-2xl rounded-md" src="https://photo-cms-kienthuc.zadn.vn/zoom/800/Uploaded/nguyenanhtuan/2015_03_09/kawasaki-ninja-h2r_VUIC.jpg" alt="apple watch photo" />
       </div>
-    </div>
+    </div> 
     <Sile/>
   </header>
-  
+
+
+</div>
   )
 }
 

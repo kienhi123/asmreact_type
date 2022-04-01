@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Websitelayout from './pages/layout/Websitelayout'
 import Signup from './pages/layout/Signup'
 import 'tw-elements';
-import Sile from './commpents/Sile';
+import Adminlayout from './pages/layout/Adminlayout';
 function App() {
 
   return (
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Websitelayout />} />
         <Route path='/signup' element={<Signup />} />
-        <Route path='/a' element={<Sile />} />
+        <Route path='/admin' element={<Adminlayout />} />
 
       </Routes>
 
