@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../../commpents/Card'
+import Footer from '../../commpents/Footer'
 import Sile from '../../commpents/Sile'
 
 type Props = {}
@@ -71,7 +72,7 @@ const Websitelayout = (props: Props) => {
     <Sile/>
   </header>
    <Card/>
-
+<Footer/>
 </div>
   )
 }

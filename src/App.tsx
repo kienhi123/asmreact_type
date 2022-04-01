@@ -11,8 +11,12 @@ import { ProductType } from './type/Products';
 import { add, list, remove, update } from './api/product';
 import Edit from './pages/layout/Edit';
 import Card from './commpents/Card';
+import { signup } from './api/user';
+import Signin from './pages/layout/Signin';
 function App() {
   const [products, setProducts] = useState<ProductType[]>([]);
+  const [users, setUser] = useState<ProductType[]>([])
+
   useEffect(() => {
     const getProducts = async () => {
       const { data } = await list();
@@ -40,17 +44,24 @@ function App() {
           
         }
   }
+  // sigin
+  const onHandleSignup = async (user:any) =>{
+    const {data} = await signup(user)
+    setUser([...users, data]);
+  }
   return (
     <div className="App">
       <Routes>
         <Route path='/' element={<Websitelayout />} />
-        <Route path='/signup' element={<Signup />} />
+        <Route path='/signup' element={<Signup onAdd={onHandleSignup} />} />
         <Route path='/admin' element={<Adminlayout />} />
         <Route path='/add' element={<Add name='kien' onAdd={onhandlerAdd}/>} />
         <Route path='/list' element={<List products={products} onRemove={onHandleremove}/>} />
         <Route path='/products/:id/edit' element={<Edit onUpdate={onhanderUpdate}/>} />
 
         <Route path='/card' element={<Card/>} />
+        <Route path='/signin' element={<Signin/>} />
+
 
       </Routes>
 

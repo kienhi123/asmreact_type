@@ -94,7 +94,7 @@ const Card = (props: Props) => {
         </div>
       
     </div>
-    <iframe className='pt-4' width="1500" height="315" src="https://www.youtube.com/embed/SBOAMiZWAqA" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe className='pt-4' width="1500" height="315" src="https://www.youtube.com/embed/SBOAMiZWAqA" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
 
 </main>
 

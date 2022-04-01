@@ -1,6 +1,4 @@
 import React from 'react';
-import "toastr/build/toastr.min.css";
-import toastr from "toastr";
 
 import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -16,28 +14,27 @@ type ProductSignupProps = {
   
   }
 
-const Signup = (props: ProductSignupProps) => {
+const Signin = (props: ProductSignupProps) => {
     const { register, handleSubmit, formState: { errors } } = useForm<Input>();
     const navigate = useNavigate();
     const onSubmit: SubmitHandler<Input> = (dataInput) => {
+      console.log(dataInput)
       props.onAdd(dataInput)
-      toastr.success("Bạn đã đăng kí thành công");
-      navigate('/signin')
+      navigate('/')
     }
     return (
         <div>
             <section className="h-screen">
+                
                 <div className="container px-6 py-12 h-full">
+                <strong className='text-red-900 text-3xl p-6'>LOGIN ACCOUNT</strong>
+
                     <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
                         <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
                             <img src="https://24hthongtin.com/img_data/images/so-sanh-giua-xe-may-honda-va-yamaha.jpg" className="w-full" alt="Phone image" />
                         </div>
                         <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
-                            <h1 className='text-zinc-900 pb-4'>Welcome Back!</h1>
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <div className="mb-6">
-                                    <input type="text"  {...register('name')} className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Name address" />
-                                </div>
                                 <div className="mb-6">
                                     <input type="email" {...register('email')} className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Email address" />
                                 </div>
@@ -74,4 +71,4 @@ const Signup = (props: ProductSignupProps) => {
     )
 }
 
-export default Signup
+export default Signin
