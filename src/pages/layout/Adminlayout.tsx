@@ -106,7 +106,7 @@ const Adminlayout = (props: Props) => {
   
     <header className="bg-white shadow">
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+      <img className='mx-auto' src="https://i.pinimg.com/originals/36/1a/ed/361aedc1b97dc88e8ce8c954d6619391.gif" width="400px" />
       </div>
     </header>
  <main className="flex-col bg-indigo-50 w-full ml-4 pr-6">

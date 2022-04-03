@@ -1,15 +1,36 @@
 import React from 'react'
+import { ProductType } from '../type/Products'
 
-type Props = {}
+type PropsCard = {
+    products:ProductType[];
+};
 
-const Card = (props: Props) => {
+const Card = ({products}: PropsCard) => {
   return (
     <main className="my-8">
     <div className="container mx-auto px-6">
         <h3 className="text-gray-700 text-2xl font-medium">News 20022</h3><hr />
         <span className="mt-3 text-sm text-gray-500">HONDA</span>
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
-            <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+                {products?.map(product=>{
+                return(
+
+                <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+                    <img  className="flex items-end justify-end h-56 w-full bg-cover max-w-xs hover:scale-110 transition duration-300 ease-in-out" src={product.img} alt="" />
+                    <button className="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                        <svg className="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </button>
+                
+                <div className="px-5 py-3">
+                    <a href={`/products/${product._id}`}>
+                    <strong className=" text-xl uppercase">{product.name}</strong> <br />
+                    </a>
+                </div>
+            </div>
+                )
+        })}
+    
+            {/* <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
                 <div className="flex items-end justify-end h-56 w-full bg-cover max-w-xs hover:scale-110 transition duration-300 ease-in-out" style={{ backgroundImage: 'url("http://media.doisongphapluat.com/514/2016/11/23/phien-ban-honda-4.jpg")' }}>
                     <button className="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                         <svg className="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
@@ -90,7 +111,7 @@ const Card = (props: Props) => {
                 <div className="px-5 py-3">
                     <strong className="text-xl uppercase">HONDA REBEL 300</strong>
                 </div>
-            </div>      
+            </div>       */}
         </div>
       
     </div>

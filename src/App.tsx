@@ -10,9 +10,11 @@ import List from './pages/layout/List';
 import { ProductType } from './type/Products';
 import { add, list, remove, update } from './api/product';
 import Edit from './pages/layout/Edit';
-import Card from './commpents/Card';
 import { signup } from './api/user';
 import Signin from './pages/layout/Signin';
+import ProductDetail from './pages/layout/ProductDetail';
+import Blog from './commpents/Blog';
+import Lienhe from './commpents/Lienhe';
 function App() {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [users, setUser] = useState<ProductType[]>([])
@@ -40,8 +42,7 @@ function App() {
         try {
           const {data} = await update (product);
           setProducts(products.map(item => item._id === data._id ? product : item))
-        } catch (error) {
-          
+        } catch (error) {        
         }
   }
   // sigin
@@ -52,15 +53,17 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Websitelayout />} />
+        <Route path='/' element={<Websitelayout  products={products}/>} />
         <Route path='/signup' element={<Signup name='kien' onAdd={onHandleSignup} />} />
         <Route path='/admin' element={<Adminlayout />} />
         <Route path='/add' element={<Add name='kien' onAdd={onhandlerAdd}/>} />
         <Route path='/list' element={<List products={products} onRemove={onHandleremove}/>} />
         <Route path='/products/:id/edit' element={<Edit onUpdate={onhanderUpdate}/>} />
-        <Route path='/card' element={<Card/>} />
         <Route path='/signin' element={<Signin/>} />
 
+        <Route path='/products/:id' element={<ProductDetail/>} />
+        <Route path='/blog' element={<Blog/>} />
+        <Route path='/lienhe' element={<Lienhe/>} />
 
       </Routes>
 
