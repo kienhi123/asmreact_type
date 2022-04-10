@@ -5,23 +5,31 @@ import { authenticated } from '../../utils/localStaroge';
 import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from "react-hook-form";
 import { signin } from '../../api/user';
+import Navwebsite from '../../commpents/Navwebsite';
+
 type Input = {
-    name:string,
     email: string,
     password: string
 };
 const Signin = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<Input>();
     const navigate = useNavigate();
-    const onSubmit: SubmitHandler<Input> = async data => {
-        const {data:user} = await signin(data)
+    const onSubmit: SubmitHandler<Input> = async user => {
+        const {data} = await signin(user)
         authenticated(user,()=>{
+            localStorage.setItem('user',JSON.stringify(data))
+       if (data.user.role === 1) {
+           navigate("/admin")
+       } else {
+        navigate("/")
+       }
             toastr.success("Bạn đã đăng nhập thành công,chờ 3s để chuyển trang");
-            navigate('/')
+
         })
     }
     return (
         <div>
+            <Navwebsite/>
             <section className="h-screen">
                 <div className="container px-6 py-12 h-full">
                 <strong className='text-red-900 text-3xl p-6'>LOGIN ACCOUNT</strong>
@@ -46,7 +54,7 @@ const Signin = () => {
                                     <a href="#!" className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out">Forgot password?</a>
                                 </div>
                                 <button type="submit" className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full" data-mdb-ripple="true" data-mdb-ripple-color="light">
-                                    Sign up
+                                    Sign in
                                 </button>
                                 <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
                                     <p className="text-center font-semibold mx-4 mb-0">OR</p>

@@ -111,7 +111,7 @@ const Adminlayout = (props: Props) => {
     </header>
  <main className="flex-col bg-indigo-50 w-full ml-4 pr-6">
   <div className="flex justify-between p-4 bg-white mt-3 rounded-xl shadow-lg">
-    <h1 className="text-xl font-bold text-gray-700">Welcome to xfitkids</h1>
+    <h1 className="text-xl font-bold text-gray-700">Welcome to Viet Nam</h1>
     <div className="flex justify-between w-2/5">
       <div className="flex items-center border-2 p-2 rounded-xl">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">

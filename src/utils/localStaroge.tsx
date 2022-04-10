@@ -1,6 +1,5 @@
 import React from 'react'
-import {User} from '../type/user'
-type Props = {}
+import {User} from '../type/User';
 
 export const authenticated = (user:User,next:()=>void) => {
     localStorage.setItem('user',JSON.stringify(user))

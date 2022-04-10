@@ -38,7 +38,6 @@ const Edit = (props: EditProps) => {
     <div>
       <Nav />
       <strong className=" text-xl uppercase pt-4">Sửa Thông Tin Sản Phẩm</strong> <br />
-
       <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group mb-6">
@@ -62,7 +61,7 @@ const Edit = (props: EditProps) => {
             <input type="text" {...register('img')} className="form-control block
           w-full
           px-3
-          py-1.5
+          py-1.5 
           text-base
           font-normal
           text-gray-700

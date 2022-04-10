@@ -47,7 +47,8 @@ const List = (props: ProductManagerRemove) => {
                                             <td className='border text-sm text-gray-900'><img className='mx-auto' src={item.img} alt="" width="150px"/></td>
                                             <td className='border text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap'>{item.price}</td>
                                             <td className='border text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap'>{item.desc}</td>
-                                            <button onClick={() => props.onRemove(item._id)}><i className="fa-solid fa-trash-can"></i></button>
+                                            <hr />
+                                            <button className='pt-9' onClick={() => props.onRemove(item._id)}><i className="fa-solid fa-trash-can"></i></button>
                                             <Link className='p-3' to={`/products/${item._id}/edit`}><i className="fa-solid fa-gear"></i></Link> <br />
                                         </tr>
                                     })}

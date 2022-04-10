@@ -125,7 +125,7 @@ const Signup = (props: Props) => {
       </div>
     </section>
  </div>
-  )
+  )   
 }
 
 export default Signup;

@@ -9,17 +9,13 @@ type Input = {
   desc: string,
   img:string
 }
-
 type AddProps = {
   name: string,
   onAdd: (products: Input) => void
 }
-
 const Add = (props: AddProps) => {
-
   const { register, handleSubmit, formState: { errors } } = useForm<Input>();
   const navigate = useNavigate()
-
   const onSubmit: SubmitHandler<Input> = (dataInput) => {
     props.onAdd(dataInput)
     navigate('/list')
@@ -49,6 +45,9 @@ const Add = (props: AddProps) => {
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
               placeholder="Name" />
+               {errors.name && <span>Bắt buộc phải nhập trường này!</span>}
+                      
+
           </div>
           <div className="form-group mb-6">
             <input type="text" {...register('img')} className="form-control block
@@ -68,6 +67,8 @@ const Add = (props: AddProps) => {
               placeholder="ảnh" />
           </div>
           <div className="form-group mb-6">
+          {errors.img && <span>Bắt buộc phải nhập trường này!</span>}
+
             <input type="text"  {...register('price')} className="form-control block
           w-full
           px-3
@@ -103,7 +104,6 @@ const Add = (props: AddProps) => {
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
         "
-
               placeholder="Message" {...register('desc')}
             ></textarea>
           </div>

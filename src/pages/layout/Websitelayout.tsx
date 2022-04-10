@@ -1,5 +1,6 @@
 import React from 'react'
-import Card from '../../commpents/Card'
+import { useNavigate } from 'react-router-dom'
+import Cards from '../../commpents/Cards'
 import Footer from '../../commpents/Footer'
 import Sile from '../../commpents/Sile'
 import { ProductType } from '../../type/Products'
@@ -7,8 +8,14 @@ import { ProductType } from '../../type/Products'
 type Props = {
   products:ProductType[];
 }
-
 const Websitelayout = ({products}: Props) => {
+  const navigate = useNavigate()
+    const onSearch = () => {
+        const search_value = (document.querySelector('#search_content') as HTMLInputElement).value
+        if (search_value != "") {
+            navigate(`/product/search/${search_value}`)
+        }
+    }
   return ( <div className=''>
     <header className="bg-white dark:bg-gray-800">
     <nav className=" dark:bg-gray-800">
@@ -22,7 +29,7 @@ const Websitelayout = ({products}: Props) => {
 
           <a href="#" className="border-b-2 text-2xl border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">Sản Phẩm</a>
 
-          <a href="#" className="border-b-2 text-2xl  border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">Blog</a>
+          <a href="/blog" className="border-b-2 text-2xl  border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">Blog</a>
 
           <a href="/lienhe" className="border-b-2 text-2xl  border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">Liên Hệ</a>
 
@@ -33,23 +40,25 @@ const Websitelayout = ({products}: Props) => {
           <a href="#" className="border-b-2 text-2xl  border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">
             <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m.75 19h7.092c4.552 0 6.131-6.037 2.107-8.203 2.701-2.354 1.029-6.797-2.595-6.797h-6.604c-.414 0-.75.336-.75.75v13.5c0 .414.336.75.75.75zm.75-13.5h5.854c3.211 0 3.215 4.768 0 4.768h-5.854zm0 6.268h6.342c3.861 0 3.861 5.732 0 5.732h-6.342z" /><path d="m18.374 7.857c-3.259 0-5.755 2.888-5.635 5.159-.247 3.28 2.397 5.984 5.635 5.984 2.012 0 3.888-1.065 4.895-2.781.503-.857-.791-1.613-1.293-.76-.739 1.259-2.12 2.041-3.602 2.041-2.187 0-3.965-1.668-4.125-3.771 1.443.017 4.136-.188 8.987-.033.016 0 .027-.008.042-.008 2-.09-.189-5.831-4.904-5.831zm-3.928 4.298c1.286-3.789 6.718-3.676 7.89.064-4.064.097-6.496-.066-7.89-.064z" /><path d="m21.308 6.464c.993 0 .992-1.5 0-1.5h-5.87c-.993 0-.992 1.5 0 1.5z" /></svg>
           </a>
-          <a href="/signup" className=" text-2xl   border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6"><i className="fa-solid fa-user pl-8"></i></a>
+          <a href="/signup" className=" text-2xl dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6"><i className="fa-solid fa-user pl-8"></i></a>
 
         </div>
       </div>
     </nav>
-
-
+    {/* search */}
     <div className="mb-3 xl:w-96 mx-auto pt-5">
       <div className="input-group relative flex flex-wrap items-stretch w-full mb-4">
-        <input type="search" className="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
-        <button className="btn inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center" type="button" id="button-addon2">
+        <input type="search" id='search_content' className="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
+        <button onClick={onSearch} className="btn inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center" type="button" id="button-addon2">
           <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" className="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
           </svg>
         </button>
       </div>
     </div>
+
+
+     
     <div className="container flex flex-col px-6 py-4 mx-auto space-y-6 md:h-128 md:py-16 md:flex-row md:items-center md:space-x-6">
       <div className="flex flex-col items-center w-full md:flex-row md:w-1/2">
         <div className="flex justify-center order-2 mt-6 md:mt-0 md:space-y-3 md:flex-col">
@@ -71,10 +80,11 @@ const Websitelayout = ({products}: Props) => {
         <img className="object-cover w-full h-full max-w-2xl rounded-md  group-hover:text-white" src="https://www.tinoto.net/wp-content/uploads/2021/07/honda-cb300r-tinoto.net-700x525.jpg" alt="apple watch photo" width="200px" />
       </div>
     </div> 
-    <Sile/>
+  <Sile/>
   </header>
 
-<Card  products={products} />
+<Cards  products={products} />
+<hr />
 <Footer/>
 </div>
   )

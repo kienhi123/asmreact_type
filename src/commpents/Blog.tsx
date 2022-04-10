@@ -1,47 +1,132 @@
 import React from 'react'
+import Footer from './Footer';
+import Navwebsite from './Navwebsite';
 
 type Props = {}
 
 const Blog = (props: Props) => {
   return (
     <div>
-         <div className="max-w-4xl mx-auto grid grid-cols-1 lg:max-w-5xl lg:gap-x-20 lg:grid-cols-2"/>
-    <div className="relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1">
-      <h1 className="mt-1 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">Beach House in Collingwood</h1>
-      <p className="text-sm leading-4 font-medium text-white sm:text-slate-500 dark:sm:text-slate-400">Entire house</p>
+      <Navwebsite/>
+      <div className="flex justify-center items-center">
+  <div className="2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
+    <div role="main" className="flex flex-col items-center justify-center">
+      <h1 className="text-4xl font-semibold leading-9 text-center text-gray-800 dark:text-gray-50">This Week Blogs</h1>
+      <p className="text-base leading-normal text-center text-gray-600 dark:text-white mt-4 lg:w-1/2 md:w-10/12 w-11/12">If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough</p>
     </div>
-    
-    <div className="grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0"/>
-      <img src="/beach-house.jpg" alt="" className="w-full h-60 object-cover rounded-lg sm:h-52 sm:col-span-2 lg:col-span-full" loading="lazy"/>
-  
-    <dl className="mt-4 text-xs font-medium flex items-center row-start-2 sm:mt-1 sm:row-start-3 md:mt-2.5 lg:row-start-2">
-      <dt className="sr-only">Reviews</dt>
-      <dd className="text-indigo-600 flex items-center dark:text-indigo-400">
-        <svg width="24" height="24" fill="none" aria-hidden="true" className="mr-1 stroke-current dark:stroke-indigo-500">
-          <path d="m12 5 2 5h5l-4 4 2.103 5L12 16l-5.103 3L9 14l-4-4h5l2-5Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <span>4.89 <span className="text-slate-400 font-normal">(128)</span></span>
-      </dd>
-      <dt className="sr-only">Location</dt>
-      <dd className="flex items-center">
-        <svg width="2" height="2" aria-hidden="true" fill="currentColor" className="mx-3 text-slate-300">
-          <circle cx="1" cy="1" r="1" />
-        </svg>
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="mr-1 text-slate-400 dark:text-slate-500" aria-hidden="true">
-          <path d="M18 11.034C18 14.897 12 19 12 19s-6-4.103-6-7.966C6 7.655 8.819 5 12 5s6 2.655 6 6.034Z" />
-          <path d="M14 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
-        </svg>
-        Collingwood, Ontario
-      </dd>
-    </dl>
-    <div className="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4">
-      <button type="button" className="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg">Check availability</button>
+    <div className="lg:flex items-stretch md:mt-12 mt-8">
+      <div className="lg:w-1/2">
+        <div className="sm:flex items-center justify-between xl:gap-x-8 gap-x-6">
+          <div className="sm:w-1/2 relative">
+            <div>
+              <p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
+              <div className="absolute bottom-0 left-0 p-6">
+                <h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
+                <p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
+                <a href="javascript:void(0)" className="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+                  <p className="pr-2 text-sm font-medium leading-none">Read More</p>
+                  <svg className="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <img src="https://motosaigon.vn/wp-content/uploads/2022/02/vario-160-2022-danh-gia-xe-honda-motosaigon-20.jpg" className="w-full" alt="chair" />
+          </div>
+          <div className="sm:w-1/2 sm:mt-0 mt-4 relative">
+            <div>
+              <p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
+              <div className="absolute bottom-0 left-0 p-6">
+                <h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
+                <p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
+                <a href="javascript:void(0)" className="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+                  <p className="pr-2 text-sm font-medium leading-none">Read More</p>
+                  <svg className="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <img src="http://s3.storage.2banh.vn/image/2016/12/bang-gia-xe-honda-2017-moi-nhat-vision-air-blade-lead-sh-10003-1482719997-586082fd28d37.jpg" className="w-full" alt="wall design" />
+          </div>
+        </div>
+        <div className="relative">
+          <div>
+            <p className="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
+            <div className="absolute bottom-0 left-0 md:p-10 p-6">
+              <h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
+              <p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
+              <a href="javascript:void(0)" className="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+                <p className="pr-2 text-sm font-medium leading-none">Read More</p>
+                <svg className="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <img src="https://muasamxe.com/wp-content/uploads/2017/12/honda-winner-2018-2.png" alt="sitting place" className="w-full mt-8 md:mt-6 hidden sm:block" />
+          <img className="w-full mt-4 sm:hidden" src="https://i.ibb.co/6XYbN7f/Rectangle-29.png" alt="sitting place" />
+        </div>
+      </div>
+      <div className="lg:w-1/2 xl:ml-8 lg:ml-4 lg:mt-0 md:mt-6 mt-4 lg:flex flex-col justify-between">
+        <div className="relative">
+          <div>
+            <p className="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
+            <div className="absolute bottom-0 left-0 md:p-10 p-6">
+              <h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
+              <p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
+              <a href="javascript:void(0)" className="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+                <p className="pr-2 text-sm font-medium leading-none">Read More</p>
+                <svg className="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <img src="https://cms-i.autodaily.vn/du-lieu/2018/08/05/rs150r-key-visual-850x607.jpg" alt="sitting place" className="w-full sm:block hidden" />
+          <img className="w-full sm:hidden" src="https://i.ibb.co/dpXStJk/Rectangle-29.png" alt="sitting place" />
+        </div>
+        <div className="sm:flex items-center justify-between xl:gap-x-8 gap-x-6 md:mt-6 mt-4">
+          <div className="relative w-full">
+            <div>
+              <p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
+              <div className="absolute bottom-0 left-0 p-6">
+                <h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
+                <p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
+                <a href="javascript:void(0)" className="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+                  <p className="pr-2 text-sm font-medium leading-none">Read More</p>
+                  <svg className="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <img src="https://i.ibb.co/3yvZBpm/img-5.png" className="w-full" alt="chair" />
+          </div>
+          <div className="relative w-full sm:mt-0 mt-4">
+            <div>
+              <p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
+              <div className="absolute bottom-0 left-0 p-6">
+                <h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
+                <p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
+                <a href="javascript:void(0)" className="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+                  <p className="pr-2 text-sm font-medium leading-none">Read More</p>
+                  <svg className="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <img src="https://i.ibb.co/gDdnJb5/img-6.png" className="w-full" alt="wall design" />
+          </div>
+        </div>
+      </div>
     </div>
-    <p className="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400">
-      This sunny and spacious room is for those traveling light and looking for a comfy and cosy place to lay their head for a night or two. This beach house sits in a vibrant neighborhood littered with cafes, pubs, restaurants and supermarkets and is close to all the major attractions such as Edinburgh Castle and Arthur's Seat.
-    </p>
   </div>
-   
+</div>
+ <hr />
+ <Footer/>
+ </div>
   )
 }
 export default Blog;

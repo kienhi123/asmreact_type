@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { read } from '../../api/product';
+import Footer from '../../commpents/Footer';
 import Navwebsite from '../../commpents/Navwebsite';
 import Sile from '../../commpents/Sile';
 import { ProductType } from '../../type/Products';
@@ -10,7 +11,6 @@ type Props = {}
 const ProductDetail = (props: Props) => {
     const { id } = useParams();
     const [product, setProduct] = useState<ProductType>();
-
     useEffect(() => {
         const getProduct = async () => {
             const { data } = await read(id)
@@ -27,7 +27,6 @@ const ProductDetail = (props: Props) => {
             <div className="grid  grid-cols-1 sm:grid-cols-2  mt-6">
                 <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden pl-4">
                     <img src={product?.img} alt="" />
-
                 </div>
                 <div className="w-full  pr-8 font-bold shadow-md overflow-hidden">
                     <h1 className="text-4xl font-bold mt-0 mb-6">Thông Tin Sản Phẩm</h1>
@@ -36,7 +35,7 @@ const ProductDetail = (props: Props) => {
                     </div>
                     <p className='text-3xl'>Pice:{product?.price}</p>
                     <p>{product?.desc}</p>
-                    <div className="flex space-x-2 justify-center pt-3">
+                    <div className="flex space-x-2 justify-center pb-4 pt-3">
                         <button
                             type="button"
                             data-mdb-ripple="true"
@@ -46,6 +45,8 @@ const ProductDetail = (props: Props) => {
                     </div>
                 </div>
             </div>
+            <  hr />
+            < Footer/>
         </div>
     )
 }
