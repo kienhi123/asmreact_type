@@ -1,6 +1,6 @@
 import React from 'react';
 import "toastr/build/toastr.min.css";
-import toastr from "toastr";
+
 import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from "react-hook-form";
 import { signup } from '../../api/user';
@@ -15,7 +15,7 @@ const Signup = () => {
     const navigate = useNavigate();
     const onSubmit: SubmitHandler<Input> = data => {
       signup(data)
-      toastr.success("Bạn đã đăng kí thành công");
+      alert("Bạn đã đăng kí thành công");
       navigate('/signin')
     }
     return ( 

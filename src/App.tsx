@@ -32,7 +32,7 @@ function App() {
     getProducts();
   }, []);
   // xóa
-  const onHandleremove = async (id: number) => {
+  const onHandleremove = async (id: number ) => {
     remove(id)
     setProducts(products.filter(item => item._id !== id));
   }

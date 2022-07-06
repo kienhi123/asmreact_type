@@ -4,7 +4,7 @@ import Nav from '../../commpents/Nav';
 import { ProductType } from '../../type/Products';
 type ProductManagerRemove = {
     products: ProductType[];
-    onRemove: (id: number) => void
+    onRemove: (id: number ) => void
 }
 const List = (props: ProductManagerRemove) => {
     return (
@@ -48,7 +48,7 @@ const List = (props: ProductManagerRemove) => {
                                             <td className='border text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap'>{item.price}</td>
                                             <td className='border text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap'>{item.desc}</td>
                                             <hr />
-                                            <button className='pt-9' onClick={() => props.onRemove(item._id)}><i className="fa-solid fa-trash-can"></i></button>
+                                            <button className='pt-9' onClick={() => props.onRemove(item._id!)}><i className="fa-solid fa-trash-can"></i></button>
                                             <Link className='p-3' to={`/products/${item._id}/edit`}><i className="fa-solid fa-gear"></i></Link> <br />
                                         </tr>
                                     })}

@@ -1,6 +1,5 @@
 import React from 'react';
-import "toastr/build/toastr.min.css";
-import toastr from "toastr";
+
 import { authenticated } from '../../utils/localStaroge';
 import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -16,13 +15,13 @@ const Signin = () => {
     const navigate = useNavigate();
     const onSubmit: SubmitHandler<Input> = async user => {
         const {data} = await signin(user)
+        console.log(data)
         authenticated(user,()=>{
             localStorage.setItem('user',JSON.stringify(data))
-       if (data.user.role === 1) {
-           
+       if (data.user.role === 1) { 
         navigate("/admin")
        }
-            toastr.success("Bạn đã đăng nhập thành công,chờ 3s để chuyển trang");
+            alert("Bạn đã đăng nhập thành công");
             navigate("/")
         })
     }
