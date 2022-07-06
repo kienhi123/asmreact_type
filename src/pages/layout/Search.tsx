@@ -26,7 +26,7 @@ const Search = (props: Props) => {
             {/* ====== Cards Section Start */}
             <div className="  bg-[#F3F4F6] ">
                 <div className="container">
-                    <h3 className="text-gray-700 text-2xl font-medium">Kết quẩ tìm kiếm</h3><hr />
+                    <h3 className="text-gray-700 text-2xl font-medium">Kết quả tìm kiếm</h3><hr />
                     <div className="mx-auto ">
                         <div className="grid gap-6 grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
                             {search_ilitial.map((item, index) => {

@@ -51,10 +51,7 @@ function App() {
         }
   }
   // siginup
-  const onHandleSignup = async (user:any) =>{
-    const {data} = await signup(user)
-    setUser([...users, data]);
-  }
+ 
   return (
     <div className="App">
       <Routes>

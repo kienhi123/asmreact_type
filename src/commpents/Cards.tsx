@@ -43,9 +43,7 @@ const Cards = (props: CartProps) => {
                     {item.name} 
                   </Link>
                 </h3>
-                <p className="text-base text-body-color leading-relaxed mb-7">
-                  {item.price}
-                </p>
+               
                 <Link to={`/products/${item._id}`} className="
                      inline-block
                      py-2

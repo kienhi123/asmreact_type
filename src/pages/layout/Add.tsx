@@ -2,7 +2,8 @@ import React from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { useNavigate } from "react-router-dom";
 import Nav from '../../commpents/Nav';
-
+import "toastr/build/toastr.min.css";
+import toastr from "toastr";
 type Input = {
   name: string,
   price: number,
@@ -16,12 +17,13 @@ type AddProps = {
 const Add = (props: AddProps) => {
   const { register, handleSubmit, formState: { errors } } = useForm<Input>();
   const navigate = useNavigate()
-  const onSubmit: SubmitHandler<Input> = (dataInput) => {
-    props.onAdd(dataInput)
+  const onSubmit: SubmitHandler<Input> = (data) => {
+    props.onAdd(data)
+    toastr.success("Thêm thành công");
+
     navigate('/list')
 
   }
-  // Call API
   return (
     <div>
       <Nav />

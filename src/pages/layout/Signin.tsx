@@ -19,12 +19,11 @@ const Signin = () => {
         authenticated(user,()=>{
             localStorage.setItem('user',JSON.stringify(data))
        if (data.user.role === 1) {
-           navigate("/admin")
-       } else {
-        navigate("/")
+           
+        navigate("/admin")
        }
             toastr.success("Bạn đã đăng nhập thành công,chờ 3s để chuyển trang");
-
+            navigate("/")
         })
     }
     return (
